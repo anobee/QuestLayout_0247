@@ -78,7 +78,7 @@ fun AktifitasPertama(modifier: Modifier) {
 
                         Column() {
                             Text(
-                                StringRes("Dicky Dhiva Arrayan"),
+                                StringResource(R.string.nama),
                                 fontSize = 30.sp,
                                 fontFamily = FontFamily.Cursive,
                                 color = Color.Yellow,
