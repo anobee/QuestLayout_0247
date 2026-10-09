@@ -55,11 +55,34 @@ fun AktifitasPertama(modifier: Modifier) {
         {
             Row() {
                 val Gambar = painterResource(id = R.drawable.logo_umy)
-                Image(
-                    painter = Gambar
-                            ContentDescription = null
-                            modifier = Modifier.size(100.dp).padding(all=5.dp)
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(all=100.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = colorResource(id = R.color.car_0_bg))
                 )
+                {
+                    Row() {
+                        val Gambar = painterResource(id = R.drawable.logo_umy)
+                        Image(
+                            painter = Gambar
+                                    ContentDescription = null
+                                    modifier = Modifier.size(100.dp).padding(all=5.dp)
+                        )
+
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        Column() {
+                            Text(
+                                StringRes("Dicky Dhiva Arrayan"),
+                                fontSize = 30.sp,
+                                fontFamily = FontFamily.Cursive,
+                                color = Color.Yellow,
+                                modifier = Modifier.padding(top = 10.dp)
+                            )
+                        }
+                    }
 
                 Spacer(modifier = Modifier.height(20.dp))
 
@@ -69,6 +92,7 @@ fun AktifitasPertama(modifier: Modifier) {
                         fontSize = 30.sp,
                         fontFamily = FontFamily.Cursive,
                         color = Color.Yellow,
+                        modifier = Modifier.padding(top = 10.dp)
                     )
                 }
             }
