@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -50,6 +51,28 @@ fun AktifitasPertama(modifier: Modifier) {
                 .padding(all=100.dp),
             colors = CardDefaults.cardColors(
                 containerColor = colorResource(id = R.color.car_0_bg))
+        )
+        {
+            Row() {
+                val Gambar = painterResource(id = R.drawable.logo_umy)
+                Image(
+                    painter = Gambar
+                            ContentDescription = null
+                            modifier = Modifier.size(100.dp).padding(all=5.dp)
+                )
+
+                Spacer(modifier = Modifier.height(20.dp))
+
+                Column() {
+                    Text(
+                        StringRes("Dicky Dhiva Arrayan"),
+                        fontSize = 30.sp,
+                        fontFamily = FontFamily.Cursive,
+                        color = Color.Yellow,
+                    )
+                }
+            }
+        }
 
     }
 }
