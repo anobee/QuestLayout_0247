@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">QuestLayout_0247</string>
+    <string name="prodi">Teknologi Informasi</string>
+    <string name="univ">Universitas Muhammadiyah Yogyakarta</string>
+    <string name="nama">Dicky DHiva Arrayan</string>
+    <string name="alamat">Sewon,Bantul</string>
+    <string name="copy">Copyright, 2026</string>
 </resources>
