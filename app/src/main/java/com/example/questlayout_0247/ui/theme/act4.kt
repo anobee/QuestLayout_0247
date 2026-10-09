@@ -1,13 +1,16 @@
 package com.example.questlayout_0247.ui.theme
 
-import android.media.Image
+import androidx.compose.foundation.Image
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
@@ -28,9 +31,9 @@ import com.example.questlayout_0247.R
 @Composable
 fun AktifitasPertama(modifier: Modifier) {
     Column(
-        Modifier = Modifier.padding(top = 100.dp)
-            .fillMaxsize(),
-        horizontalAlingment = Alignment.CenterHorizontally
+        modifier = Modifier.padding(top = 100.dp)
+            .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
     ){
         Text(
             stringResource(id = R.string.prodi),
@@ -43,7 +46,7 @@ fun AktifitasPertama(modifier: Modifier) {
             fontSize = 22.sp
         )
 
-        Spacer(Modifier= Modifier.height(20.dp))
+        Spacer(modifier= Modifier.height(20.dp))
 
         Card(
             modifier = Modifier
@@ -66,9 +69,9 @@ fun AktifitasPertama(modifier: Modifier) {
                     Row() {
                         val Gambar = painterResource(id = R.drawable.logo_umy)
                         Image(
-                            painter = Gambar
-                                    ContentDescription = null
-                                    modifier = Modifier.size(100.dp).padding(all=5.dp)
+                            painter = Gambar,
+                            contentDescription = null,
+                            modifier = Modifier.size(100.dp)
                         )
 
                         Spacer(modifier = Modifier.height(20.dp))
@@ -94,6 +97,18 @@ fun AktifitasPertama(modifier: Modifier) {
                         color = Color.Yellow,
                         modifier = Modifier.padding(top = 10.dp)
                     )
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                    )
+                    {
+                        Text(
+                            stringResource(id = R.string.copy),
+                            modifier = Modifier
+                            .align(Alignment.BottomCenter)
+                                .padding(bottom = 50.dp)
+                        )
+                    }
                 }
             }
         }
