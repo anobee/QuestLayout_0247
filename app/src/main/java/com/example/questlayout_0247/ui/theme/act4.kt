@@ -1,7 +1,7 @@
+
 package com.example.questlayout_0247.ui.theme
 
 import androidx.compose.foundation.Image
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,7 +17,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -29,89 +28,76 @@ import androidx.compose.ui.unit.sp
 import com.example.questlayout_0247.R
 
 @Composable
-fun AktifitasPertama(modifier: Modifier) {
+fun AktifitasPertama(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.padding(top = 100.dp)
-            .fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize()
+            .padding(top = 100.dp),
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
         Text(
-            stringResource(id = R.string.prodi),
+            text = stringResource(id = R.string.prodi),
             fontSize = 35.sp,
             fontWeight = FontWeight.Bold
         )
 
         Text(
-            stringResource(id = R.string.univ),
+            text = stringResource(id = R.string.univ),
             fontSize = 22.sp
         )
 
-        Spacer(modifier= Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(all=100.dp),
+                .padding(horizontal = 20.dp),
             colors = CardDefaults.cardColors(
-                containerColor = colorResource(id = R.color.car_0_bg))
-        )
-        {
-            Row() {
-                val Gambar = painterResource(id = R.drawable.logo_umy)
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(all=100.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = colorResource(id = R.color.car_0_bg))
+                containerColor = colorResource(id = R.color.car_0_bg)
+            )
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.logo_umy),
+                    contentDescription = "Logo UMY",
+                    modifier = Modifier.size(100.dp)
                 )
-                {
-                    Row() {
-                        val Gambar = painterResource(id = R.drawable.logo_umy)
-                        Image(
-                            painter = Gambar,
-                            contentDescription = null,
-                            modifier = Modifier.size(100.dp)
-                        )
 
-                        Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.size(16.dp))
 
-                        Column() {
-                            Text(
-                                StringResource(R.string.nama),
-                                fontSize = 30.sp,
-                                fontFamily = FontFamily.Cursive,
-                                color = Color.Yellow,
-                                modifier = Modifier.padding(top = 10.dp)
-                            )
-                        }
-                    }
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Column() {
+                Column {
                     Text(
-                        StringRes("Dicky Dhiva Arrayan"),
-                        fontSize = 30.sp,
+                        text = stringResource(id = R.string.nama),
+                        fontSize = 24.sp,
                         fontFamily = FontFamily.Cursive,
                         color = Color.Yellow,
                         modifier = Modifier.padding(top = 10.dp)
                     )
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
+
+                    Text(
+                        text = "Dicky Dhiva Arrayan",
+                        fontSize = 20.sp,
+                        fontFamily = FontFamily.Cursive,
+                        color = Color.Yellow
                     )
-                    {
-                        Text(
-                            stringResource(id = R.string.copy),
-                            modifier = Modifier
-                            .align(Alignment.BottomCenter)
-                                .padding(bottom = 50.dp)
-                        )
-                    }
                 }
             }
         }
 
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.BottomCenter
+        ) {
+            Text(
+                text = stringResource(id = R.string.copy),
+                modifier = Modifier.padding(bottom = 50.dp)
+            )
+        }
     }
 }
+
